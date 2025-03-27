@@ -8,17 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var tab: Int = 0
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        TabView (selection: $tab) {
+            Tab("RGB", systemImage: "pencil", value: 0) {
+                RGBView()
+            }
         }
         .padding()
     }
 }
-
 #Preview {
     ContentView()
 }
